@@ -1,1 +1,1 @@
-# Projet-IA-succes-cin-*ema
+# Projet-IA-succes-cinema
