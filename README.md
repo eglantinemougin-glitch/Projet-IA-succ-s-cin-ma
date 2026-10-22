@@ -1,1 +1,1 @@
-# Projet-IA-succ-s-cin-ma
+# Projet-IA-succes-cin-*ema
