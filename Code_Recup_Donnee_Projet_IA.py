@@ -7,12 +7,13 @@ dico = {"Titre" : 0,                   #A
         "Genre" : 2,                   #C
         "Durée" : 3,                   #D
         "Directeur" : 4,               #E
-        "Date de naissance" : 5,       #F
-        "Date de décès" : 6,           #G
+        "Date de naissance" : 6,       #G
         "Budget" : 11,                 #L
         "Gain domestic" : 12,          #M
         "Gain mondial" : 13            #N
         }
+
+#"Date de décès" : 7,           #F
 
 # dictionnaire contenant les données
 dico_données = {} 
@@ -70,7 +71,17 @@ for key in dico.keys():
                     
 
         if key != "Date de production jour" and key != "Genre":
-            dico_données[key].append(données[l][val])
+            try :
+                int(données[l][val])
+            except:
+                try :
+                    float(données[l][val])
+                except :
+                    dico_données[key].append(données[l][val])
+                else :
+                    dico_données[key].append(float(données[l][val]))
+            else :
+                dico_données[key].append(int(données[l][val]))
     
     # Turn into array
     if key != "Date de production jour" and key != "Genre":
