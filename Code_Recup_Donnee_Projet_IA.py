@@ -43,6 +43,7 @@ date_bis = ["Date de production jour","Date de production mois","Date de product
 dico_données["Date de production mois"] = [] 
 dico_données["Date de production année"] = []
 
+# Création de la liste genre 
 for l in range (len(données)):
     Genres = données[l][dico['Genre']].split(",")
     for i in range (len(Genres)):
@@ -71,8 +72,8 @@ for key in dico.keys(): # parcours toutes les colonnes
             else :
                 bug_line.append(l)
 
-        # Pour le moment ne sert à rien (il faudrait compiler tout les genres en une chaine de caractère ou chiffre)
-        if key == "Genre" : # ne rentre pas dans dico_données !
+        # Cas genre
+        if key == "Genre" : 
             Genres = données[l][val].split(",")
             
             Compilation_genre = [[0 for j in range(len(liste_genre))] for i in range(len(liste_genre))]
@@ -131,16 +132,14 @@ dico_genre = {}
 for l in range (len(liste_genre)):
     dico_genre[liste_genre[l]] = l
 
-
-
     
 #print()
 #print("---------------------------------------------------")
 #print()
     
 #print(dico_données)
-for key in dico_données.keys():
-    print(key,dico_données[key]) # print nombre de valeur par clé
+#for key in dico_données.keys():
+#    print(key,dico_données[key]) # print nombre de valeur par clé
 
 # vérification que "Date de production jour" contient moins de 3 caractères 
 for l in range(len(dico_données["Date de production jour"])):
@@ -150,7 +149,7 @@ for l in range(len(dico_données["Date de production jour"])):
     
 #print("\n dico_donnée (Date de naissance):\n",dico_données["Date de naissance"])
 
-print("\n liste genre :\n",liste_genre)
+#print("\n liste genre :\n",liste_genre)
 #print("---------------------------------------------------")
 #print("\n dico_genre :\n",dico_genre)
 #print("---------------------------------------------------")
