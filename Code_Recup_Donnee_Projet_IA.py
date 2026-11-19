@@ -9,6 +9,7 @@ dico = {#"Titre" : 0,                   #A
         #"Directeur" : 4,               #E
         "Date de naissance" : 6,       #G
         "Avis sur 10" :8,              #I
+        "Indice d'approvation" : 10,   #K
         "Budget" : 11,                 #L
         "Gain domestic" : 12,          #M
         "Gain mondial" : 13            #N
@@ -138,8 +139,8 @@ for l in range (len(liste_genre)):
 #print()
     
 #print(dico_données)
-#for key in dico_données.keys():
-#    print(key,dico_données[key]) # print nombre de valeur par clé
+for key in dico_données.keys():
+    print(key,dico_données[key]) # print nombre de valeur par clé
 
 # vérification que "Date de production jour" contient moins de 3 caractères 
 for l in range(len(dico_données["Date de production jour"])):
